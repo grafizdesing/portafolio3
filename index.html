@@ -89,7 +89,31 @@
                                 <div class="col-sm-6 py-2"><h6>Instagram: <span class="text-secondary">grafi_z</span></h6></div>
                                 <div class="col-sm-6 py-2"><h6>LinkedIn: <span class="text-secondary">grafiz desing</span></h6></div>
                             </div>
-                            <a href="" class="btn btn-outline-primary mr-4">Descargar Portafolio</a>
+                            <a href="" class="btn btn-outline-primary mr-4"><button id="descargarPDF">Descargar PDF</button></a>
+
+                            
+
+    <script>
+        document.getElementById('descargarPDF').addEventListener('click', function() {
+            // URL del archivo PDF
+            var pdfUrl = 'lib/documento.pdf';
+
+            // Crea un enlace temporal
+            var link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'lib/documento.pdf'; // Nombre de archivo que se descargará
+            link.target = '_blank';
+
+            // Agrega el enlace al documento y haz clic en él
+            document.body.appendChild(link);
+            link.click();
+
+            // Elimina el enlace después de la descarga
+            document.body.removeChild(link);
+        });
+    </script>
+
+    
                         </div>
                     </div>
                 </div>
